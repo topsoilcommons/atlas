@@ -36,8 +36,31 @@ const THRESHOLDS = { groundedness: 0.75, citationRate: 1.0, correctSourceRate: 0
 
 const STOPWORDS = new Set(('a an the and or of to in on for with is are was were be been being what which who how why when where does do did can could should would from into at by as it its this that these those you your we our they their he she his her them then than so such no not only also just').split(' '));
 
+// Plural stemming (added October 17, 2026). Why this exists: retrieval
+// matched question keywords literally, so a plural in a question missed
+// the singular form the prose actually uses, in both retrieval stages.
+// The named case was finance-budget (0 of 3 facts): the question asks
+// about "budgets", but the chunk carrying all three facts in finance.js
+// says "budget" (singular), so it scored only 2 distinct keywords and
+// lost the top four slots to score 2 chunks from art.js and
+// economics.js, even though stage 1 ranked finance.js first. Stemming
+// the keyword to "budget" lifts that chunk to 3 and it wins outright.
+// Measured separately before combining: stemming only stage 2 chunk
+// scoring fixes finance (3 of 3; 0.863 groundedness, 0.882 correct
+// source); stemming only stage 1 file ranking lifts bbq-brisket
+// (1 to 2 facts) and survival-priorities (1 to 3), because "needs" in
+// the question missed "need" in the prose; stemming both, which is
+// what keywords() feeding both stages does, gives 0.922 groundedness
+// and correct source rate 1 with no question losing any fact. The
+// guards keep non-plural endings (ss, us, is) untouched.
+function stemWord(word) {
+  return word.length > 3 && word.endsWith('s') && !word.endsWith('ss') && !word.endsWith('us') && !word.endsWith('is')
+    ? word.slice(0, -1)
+    : word;
+}
+
 function keywords(text) {
-  return [...new Set(text.toLowerCase().replace(/[^a-z0-9\s]/g, ' ').split(/\s+/).filter(w => w.length > 2 && !STOPWORDS.has(w)))];
+  return [...new Set(text.toLowerCase().replace(/[^a-z0-9\s]/g, ' ').split(/\s+/).filter(w => w.length > 2 && !STOPWORDS.has(w)).map(stemWord))];
 }
 
 function loadCorpus() {

@@ -1,6 +1,6 @@
 {
   "mode": "baseline",
-  "date": "2026-10-17T15:19:11.910Z",
+  "date": "2026-10-17T22:25:42.304Z",
   "questions": 17,
   "thresholds": {
     "groundedness": 0.75,
@@ -8,9 +8,9 @@
     "correctSourceRate": 0.75
   },
   "summary": {
-    "groundedness": 0.804,
+    "groundedness": 0.922,
     "citationRate": 1,
-    "correctSourceRate": 0.824
+    "correctSourceRate": 1
   },
   "rows": [
     {
@@ -149,19 +149,17 @@
       "id": "bbq-brisket",
       "subject": "bbq",
       "retrievedFrom": [
-        "cooking.js",
-        "cs.js",
-        "economics.js"
+        "bbq.js",
+        "cooking.js"
       ],
       "factsExpected": 3,
-      "factsFound": 1,
-      "groundedness": 0.3333333333333333,
+      "factsFound": 2,
+      "groundedness": 0.6666666666666666,
       "cited": true,
-      "correctSource": false,
+      "correctSource": true,
       "citations": [
-        "cooking.js",
-        "cs.js",
-        "economics.js"
+        "bbq.js",
+        "cooking.js"
       ],
       "invalidCitations": []
     },
@@ -169,19 +167,19 @@
       "id": "survival-priorities",
       "subject": "survival",
       "retrievedFrom": [
-        "history.js",
         "hunting.js",
-        "parenting.js"
+        "survival.js",
+        "history.js"
       ],
       "factsExpected": 3,
-      "factsFound": 1,
-      "groundedness": 0.3333333333333333,
+      "factsFound": 3,
+      "groundedness": 1,
       "cited": true,
-      "correctSource": false,
+      "correctSource": true,
       "citations": [
-        "history.js",
         "hunting.js",
-        "parenting.js"
+        "survival.js",
+        "history.js"
       ],
       "invalidCitations": []
     },
@@ -241,17 +239,19 @@
       "id": "finance-budget",
       "subject": "finance",
       "retrievedFrom": [
-        "art.js",
-        "economics.js"
+        "finance.js",
+        "math.js",
+        "astronomy.js"
       ],
       "factsExpected": 3,
-      "factsFound": 0,
-      "groundedness": 0,
+      "factsFound": 3,
+      "groundedness": 1,
       "cited": true,
-      "correctSource": false,
+      "correctSource": true,
       "citations": [
-        "art.js",
-        "economics.js"
+        "finance.js",
+        "math.js",
+        "astronomy.js"
       ],
       "invalidCitations": []
     },

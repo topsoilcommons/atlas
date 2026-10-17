@@ -1,10 +1,10 @@
 # Tutor eval results (baseline)
 
-Run: 2026-10-17T15:19:11.910Z. Questions: 17. Mode: baseline.
+Run: 2026-10-17T22:25:42.304Z. Questions: 17. Mode: baseline.
 
-- Groundedness (expected atlas facts present in the answer): **0.804** (gate: 0.75)
+- Groundedness (expected atlas facts present in the answer): **0.922** (gate: 0.75)
 - Citation rate (answers naming at least one retrieved source and no unretrieved source; enforcement in scoreAnswer): **1** (gate: 1)
-- Correct source rate (cited the subject file the question targets): **0.824** (gate: 0.75)
+- Correct source rate (cited the subject file the question targets): **1** (gate: 0.75)
 
 | Question | Subject | Facts found | Cited | Correct source | Retrieved from |
 |---|---|---|---|---|---|
@@ -16,12 +16,12 @@ Run: 2026-10-17T15:19:11.910Z. Questions: 17. Mode: baseline.
 | knots-three-kinds | knots | 3/3 | yes | yes | knots.js |
 | welding-mig-tig | welding | 3/3 | yes | yes | welding.js |
 | gardening-soil | gardening | 3/3 | yes | yes | biology.js, gardening.js |
-| bbq-brisket | bbq | 1/3 | yes | no | cooking.js, cs.js, economics.js |
-| survival-priorities | survival | 1/3 | yes | no | history.js, hunting.js, parenting.js |
+| bbq-brisket | bbq | 2/3 | yes | yes | bbq.js, cooking.js |
+| survival-priorities | survival | 3/3 | yes | yes | hunting.js, survival.js, history.js |
 | physics-frameworks | physics | 3/3 | yes | yes | math.js, physics.js |
 | geology-basics | geology | 2/3 | yes | yes | astronomy.js, geology.js |
 | firstaid-cpr | firstaid | 3/3 | yes | yes | firstaid.js |
-| finance-budget | finance | 0/3 | yes | no | art.js, economics.js |
+| finance-budget | finance | 3/3 | yes | yes | finance.js, math.js, astronomy.js |
 | nutrition-prout | nutrition | 3/3 | yes | yes | nutrition.js, chemistry.js, history.js |
 | law-contracts | law | 3/3 | yes | yes | history.js, law.js, b04-enhance.js, electrical.js |
 | medicine-harvey | medicine | 2/3 | yes | yes | medicine.js, biology.js, astronomy.js |
