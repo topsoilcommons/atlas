@@ -1,6 +1,6 @@
 {
   "mode": "baseline",
-  "date": "2026-10-17T22:25:42.304Z",
+  "date": "2026-10-18T13:17:58.500Z",
   "questions": 17,
   "thresholds": {
     "groundedness": 0.75,
@@ -8,7 +8,7 @@
     "correctSourceRate": 0.75
   },
   "summary": {
-    "groundedness": 0.922,
+    "groundedness": 0.941,
     "citationRate": 1,
     "correctSourceRate": 1
   },
@@ -50,6 +50,7 @@
       "subject": "astronomy",
       "retrievedFrom": [
         "astronomy.js",
+        "math.js",
         "physics.js"
       ],
       "factsExpected": 3,
@@ -59,6 +60,7 @@
       "correctSource": true,
       "citations": [
         "astronomy.js",
+        "math.js",
         "physics.js"
       ],
       "invalidCitations": []
@@ -83,7 +85,8 @@
       "id": "sailing-jibe",
       "subject": "sailing",
       "retrievedFrom": [
-        "sailing.js"
+        "sailing.js",
+        "medicine.js"
       ],
       "factsExpected": 2,
       "factsFound": 2,
@@ -91,7 +94,8 @@
       "cited": true,
       "correctSource": true,
       "citations": [
-        "sailing.js"
+        "sailing.js",
+        "medicine.js"
       ],
       "invalidCitations": []
     },
@@ -149,6 +153,7 @@
       "id": "bbq-brisket",
       "subject": "bbq",
       "retrievedFrom": [
+        "cs.js",
         "bbq.js",
         "cooking.js"
       ],
@@ -158,6 +163,7 @@
       "cited": true,
       "correctSource": true,
       "citations": [
+        "cs.js",
         "bbq.js",
         "cooking.js"
       ],
@@ -168,8 +174,7 @@
       "subject": "survival",
       "retrievedFrom": [
         "hunting.js",
-        "survival.js",
-        "history.js"
+        "survival.js"
       ],
       "factsExpected": 3,
       "factsFound": 3,
@@ -178,8 +183,7 @@
       "correctSource": true,
       "citations": [
         "hunting.js",
-        "survival.js",
-        "history.js"
+        "survival.js"
       ],
       "invalidCitations": []
     },
@@ -306,8 +310,8 @@
         "astronomy.js"
       ],
       "factsExpected": 3,
-      "factsFound": 2,
-      "groundedness": 0.6666666666666666,
+      "factsFound": 3,
+      "groundedness": 1,
       "cited": true,
       "correctSource": true,
       "citations": [

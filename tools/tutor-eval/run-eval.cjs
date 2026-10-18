@@ -75,11 +75,28 @@ function loadCorpus() {
     const literals = raw.match(/'(?:[^'\\]|\\.){80,}'|"(?:[^"\\]|\\.){80,}"/g) || [];
     const prose = literals.map(s => s.slice(1, -1).replace(/\\'/g, "'").replace(/\\"/g, '"').replace(/\s+/g, ' ').trim());
     for (const part of prose) {
-      // Split long prose blocks into paragraph sized chunks.
+      // Split long prose blocks into paragraph sized chunks. The size
+      // limit was 700 until October 18, 2026; it is 1200 now. Why: the
+      // medicine-harvey question sat at 2 of 3 facts because the chunker
+      // split the Harvey lead in medicine.js between its two halves.
+      // The half carrying "william harvey" and "de motu cordis" scores 5
+      // and is retrieved first, but the sentence carrying the third fact
+      // ("Harvey showed instead that blood circulates in a closed loop")
+      // starts the next chunk, which matches only 2 question keywords
+      // (show, blood), ranks 16th inside the stage 1 gate, and never
+      // reaches the four answer slots. Merging the two halves takes a
+      // 1155 character chunk, measured directly, so any limit from 1155
+      // up merges them; 1200 is the shipped value. Measured in throwaway
+      // scripts before the edit: limits 900 to 1150 leave the split in
+      // place and change nothing; limits 1155 to 1500 all give the same
+      // result (medicine-harvey 3 of 3, groundedness 0.941, no question
+      // losing any fact); occurrence based tiebreaks in stage 2, the
+      // other candidate fix, lose facts on chess-openings and
+      // plumbing-drain-slope and were rejected.
       const paras = part.split(/(?<=[.!?])\s+/);
       let buf = '';
       for (const p of paras) {
-        if ((buf + ' ' + p).length > 700 && buf) { chunks.push({ file, text: buf }); buf = p; }
+        if ((buf + ' ' + p).length > 1200 && buf) { chunks.push({ file, text: buf }); buf = p; }
         else buf = buf ? buf + ' ' + p : p;
       }
       if (buf.length > 80) chunks.push({ file, text: buf });
