@@ -1,6 +1,6 @@
 {
   "mode": "baseline",
-  "date": "2026-10-18T13:17:58.500Z",
+  "date": "2026-10-18T22:26:20.546Z",
   "questions": 17,
   "thresholds": {
     "groundedness": 0.75,
@@ -8,7 +8,7 @@
     "correctSourceRate": 0.75
   },
   "summary": {
-    "groundedness": 0.941,
+    "groundedness": 0.961,
     "citationRate": 1,
     "correctSourceRate": 1
   },
@@ -72,8 +72,8 @@
         "beekeeping.js"
       ],
       "factsExpected": 3,
-      "factsFound": 2,
-      "groundedness": 0.6666666666666666,
+      "factsFound": 3,
+      "groundedness": 1,
       "cited": true,
       "correctSource": true,
       "citations": [
@@ -245,7 +245,7 @@
       "retrievedFrom": [
         "finance.js",
         "math.js",
-        "astronomy.js"
+        "politics.js"
       ],
       "factsExpected": 3,
       "factsFound": 3,
@@ -255,7 +255,7 @@
       "citations": [
         "finance.js",
         "math.js",
-        "astronomy.js"
+        "politics.js"
       ],
       "invalidCitations": []
     },
@@ -264,8 +264,8 @@
       "subject": "nutrition",
       "retrievedFrom": [
         "nutrition.js",
-        "chemistry.js",
-        "history.js"
+        "history.js",
+        "chemistry.js"
       ],
       "factsExpected": 3,
       "factsFound": 3,
@@ -274,8 +274,8 @@
       "correctSource": true,
       "citations": [
         "nutrition.js",
-        "chemistry.js",
-        "history.js"
+        "history.js",
+        "chemistry.js"
       ],
       "invalidCitations": []
     },

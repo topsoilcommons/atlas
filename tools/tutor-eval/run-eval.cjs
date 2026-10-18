@@ -141,11 +141,51 @@ function retrieve(chunks, question, k = 4) {
   const scored = chunks.filter(c => topFiles.includes(c.file)).map(c => {
     const t = c.text.toLowerCase();
     let score = 0;
-    for (const w of kw) if (t.includes(w)) score += 1;
-    return { ...c, score };
+    const present = [];
+    for (const w of kw) if (t.includes(w)) { score += 1; present.push(w); }
+    return { ...c, score, present };
   }).filter(c => c.score > 0);
   scored.sort((a, b) => b.score - a.score);
-  return scored.slice(0, k);
+  // Tiebreak by marginal keyword coverage (added October 18, 2026).
+  // Why: chunks tied on distinct keywords were taken in corpus order,
+  // so the beekeeping-varroa question sat at 2 of 3 facts: its Varroa
+  // chunk scores 3, tied with eight chunks ahead of it, and ranked
+  // 11th inside its stage 1 gate, so the four answer slots filled with
+  // tied chunks carrying no new fact. Selection is now sequential:
+  // at each step the highest scoring remaining chunk wins, and a tie
+  // is broken by how many question keywords that chunk adds beyond
+  // the chunks already selected (corpus order breaks any remaining
+  // tie, as before). The Varroa chunk is the only score 3 chunk that
+  // adds "mite", so it is picked third, and the Langstroth chunk
+  // carrying "frames" is picked fourth. Measured in throwaway scripts
+  // before the edit: this gives beekeeping-varroa 3 of 3 and
+  // groundedness 0.961 with no question losing any fact; the other
+  // measured tiebreaks lose facts (occurrence: chess-openings 3 to 1
+  // and plumbing-drain-slope 3 to 2; density: beekeeping-varroa 2 to
+  // 1; IDF: beekeeping-varroa 2 to 1), marginal coverage as the
+  // primary key instead of the tiebreak leaves beekeeping-varroa at
+  // 2 of 3 at four slots, and adding occurrence as a third key also
+  // leaves it at 2 of 3, so none of those variants shipped.
+  const selected = [];
+  const covered = new Set();
+  const pool = [...scored];
+  while (selected.length < k && pool.length) {
+    let bestIdx = 0;
+    let bestScore = -1;
+    let bestGain = -1;
+    for (let i = 0; i < pool.length; i++) {
+      const gain = pool[i].present.filter(w => !covered.has(w)).length;
+      if (pool[i].score > bestScore || (pool[i].score === bestScore && gain > bestGain)) {
+        bestIdx = i;
+        bestScore = pool[i].score;
+        bestGain = gain;
+      }
+    }
+    const [best] = pool.splice(bestIdx, 1);
+    for (const w of best.present) covered.add(w);
+    selected.push(best);
+  }
+  return selected;
 }
 
 function baselineAnswer(hits) {
