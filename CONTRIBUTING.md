@@ -42,3 +42,11 @@ point at its sources does not merge, however good it reads.
 Keep them small and single purpose. State the evidence in the PR
 description: what you ran, what the numbers were before, what they are
 after. Contributors are named in release notes.
+
+## Ways in, by level
+
+**First hour.** No experience with this project is assumed. Clone the repo, run the tutor eval (npm run eval:tutor), and file one groundedness failure you find, with the row from the report. The exact issues stand open, labeled good first issue.
+
+**First week.** Add questions to the eval set, write the missing run book for one tool in tools/, or add a smoke check for one API function, as listed above. The eval harness verifies every fact in a question against its source file, so your before and after scores are the evidence.
+
+**The deep end.** On the current 17 question set the baseline stands at groundedness 0.922, citation rate 1, and correct source rate 1, and four questions still answer only 2 of their 3 facts: beekeeping-varroa, bbq-brisket, geology-basics, and medicine-harvey. Lifting those four to 3 of 3 without losing a fact anywhere else is the number to beat. The trend record is tools/tutor-eval/results/trend.md.
