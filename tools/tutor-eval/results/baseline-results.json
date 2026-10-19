@@ -1,6 +1,6 @@
 {
   "mode": "baseline",
-  "date": "2026-10-18T22:26:20.546Z",
+  "date": "2026-10-19T13:25:26.674Z",
   "questions": 17,
   "thresholds": {
     "groundedness": 0.75,
@@ -8,7 +8,7 @@
     "correctSourceRate": 0.75
   },
   "summary": {
-    "groundedness": 0.961,
+    "groundedness": 0.98,
     "citationRate": 1,
     "correctSourceRate": 1
   },
@@ -50,8 +50,7 @@
       "subject": "astronomy",
       "retrievedFrom": [
         "astronomy.js",
-        "math.js",
-        "physics.js"
+        "math.js"
       ],
       "factsExpected": 3,
       "factsFound": 3,
@@ -60,8 +59,7 @@
       "correctSource": true,
       "citations": [
         "astronomy.js",
-        "math.js",
-        "physics.js"
+        "math.js"
       ],
       "invalidCitations": []
     },
@@ -85,8 +83,7 @@
       "id": "sailing-jibe",
       "subject": "sailing",
       "retrievedFrom": [
-        "sailing.js",
-        "medicine.js"
+        "sailing.js"
       ],
       "factsExpected": 2,
       "factsFound": 2,
@@ -94,8 +91,7 @@
       "cited": true,
       "correctSource": true,
       "citations": [
-        "sailing.js",
-        "medicine.js"
+        "sailing.js"
       ],
       "invalidCitations": []
     },
@@ -154,27 +150,7 @@
       "subject": "bbq",
       "retrievedFrom": [
         "cs.js",
-        "bbq.js",
-        "cooking.js"
-      ],
-      "factsExpected": 3,
-      "factsFound": 2,
-      "groundedness": 0.6666666666666666,
-      "cited": true,
-      "correctSource": true,
-      "citations": [
-        "cs.js",
-        "bbq.js",
-        "cooking.js"
-      ],
-      "invalidCitations": []
-    },
-    {
-      "id": "survival-priorities",
-      "subject": "survival",
-      "retrievedFrom": [
-        "hunting.js",
-        "survival.js"
+        "bbq.js"
       ],
       "factsExpected": 3,
       "factsFound": 3,
@@ -182,8 +158,26 @@
       "cited": true,
       "correctSource": true,
       "citations": [
-        "hunting.js",
-        "survival.js"
+        "cs.js",
+        "bbq.js"
+      ],
+      "invalidCitations": []
+    },
+    {
+      "id": "survival-priorities",
+      "subject": "survival",
+      "retrievedFrom": [
+        "survival.js",
+        "hunting.js"
+      ],
+      "factsExpected": 3,
+      "factsFound": 3,
+      "groundedness": 1,
+      "cited": true,
+      "correctSource": true,
+      "citations": [
+        "survival.js",
+        "hunting.js"
       ],
       "invalidCitations": []
     },
@@ -191,7 +185,6 @@
       "id": "physics-frameworks",
       "subject": "physics",
       "retrievedFrom": [
-        "math.js",
         "physics.js"
       ],
       "factsExpected": 3,
@@ -200,7 +193,6 @@
       "cited": true,
       "correctSource": true,
       "citations": [
-        "math.js",
         "physics.js"
       ],
       "invalidCitations": []
@@ -209,8 +201,8 @@
       "id": "geology-basics",
       "subject": "geology",
       "retrievedFrom": [
-        "astronomy.js",
-        "geology.js"
+        "geology.js",
+        "astronomy.js"
       ],
       "factsExpected": 3,
       "factsFound": 2,
@@ -218,8 +210,8 @@
       "cited": true,
       "correctSource": true,
       "citations": [
-        "astronomy.js",
-        "geology.js"
+        "geology.js",
+        "astronomy.js"
       ],
       "invalidCitations": []
     },
@@ -243,9 +235,7 @@
       "id": "finance-budget",
       "subject": "finance",
       "retrievedFrom": [
-        "finance.js",
-        "math.js",
-        "politics.js"
+        "finance.js"
       ],
       "factsExpected": 3,
       "factsFound": 3,
@@ -253,9 +243,7 @@
       "cited": true,
       "correctSource": true,
       "citations": [
-        "finance.js",
-        "math.js",
-        "politics.js"
+        "finance.js"
       ],
       "invalidCitations": []
     },
@@ -264,8 +252,7 @@
       "subject": "nutrition",
       "retrievedFrom": [
         "nutrition.js",
-        "history.js",
-        "chemistry.js"
+        "history.js"
       ],
       "factsExpected": 3,
       "factsFound": 3,
@@ -274,8 +261,7 @@
       "correctSource": true,
       "citations": [
         "nutrition.js",
-        "history.js",
-        "chemistry.js"
+        "history.js"
       ],
       "invalidCitations": []
     },
@@ -283,10 +269,8 @@
       "id": "law-contracts",
       "subject": "law",
       "retrievedFrom": [
-        "history.js",
         "law.js",
-        "b04-enhance.js",
-        "electrical.js"
+        "history.js"
       ],
       "factsExpected": 3,
       "factsFound": 3,
@@ -294,10 +278,8 @@
       "cited": true,
       "correctSource": true,
       "citations": [
-        "history.js",
         "law.js",
-        "b04-enhance.js",
-        "electrical.js"
+        "history.js"
       ],
       "invalidCitations": []
     },
@@ -306,8 +288,7 @@
       "subject": "medicine",
       "retrievedFrom": [
         "medicine.js",
-        "biology.js",
-        "astronomy.js"
+        "biology.js"
       ],
       "factsExpected": 3,
       "factsFound": 3,
@@ -316,8 +297,7 @@
       "correctSource": true,
       "citations": [
         "medicine.js",
-        "biology.js",
-        "astronomy.js"
+        "biology.js"
       ],
       "invalidCitations": []
     }
