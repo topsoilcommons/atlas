@@ -1,6 +1,6 @@
 {
   "mode": "baseline",
-  "date": "2026-10-19T13:27:27.877Z",
+  "date": "2026-10-19T22:20:52.070Z",
   "questions": 17,
   "thresholds": {
     "groundedness": 0.75,
@@ -8,7 +8,7 @@
     "correctSourceRate": 0.75
   },
   "summary": {
-    "groundedness": 0.98,
+    "groundedness": 1,
     "citationRate": 1,
     "correctSourceRate": 1
   },
@@ -99,7 +99,8 @@
       "id": "knots-three-kinds",
       "subject": "knots",
       "retrievedFrom": [
-        "knots.js"
+        "knots.js",
+        "chemistry.js"
       ],
       "factsExpected": 3,
       "factsFound": 3,
@@ -107,7 +108,8 @@
       "cited": true,
       "correctSource": true,
       "citations": [
-        "knots.js"
+        "knots.js",
+        "chemistry.js"
       ],
       "invalidCitations": []
     },
@@ -150,7 +152,8 @@
       "subject": "bbq",
       "retrievedFrom": [
         "cs.js",
-        "bbq.js"
+        "bbq.js",
+        "economics.js"
       ],
       "factsExpected": 3,
       "factsFound": 3,
@@ -159,7 +162,8 @@
       "correctSource": true,
       "citations": [
         "cs.js",
-        "bbq.js"
+        "bbq.js",
+        "economics.js"
       ],
       "invalidCitations": []
     },
@@ -185,7 +189,8 @@
       "id": "physics-frameworks",
       "subject": "physics",
       "retrievedFrom": [
-        "physics.js"
+        "physics.js",
+        "math.js"
       ],
       "factsExpected": 3,
       "factsFound": 3,
@@ -193,7 +198,8 @@
       "cited": true,
       "correctSource": true,
       "citations": [
-        "physics.js"
+        "physics.js",
+        "math.js"
       ],
       "invalidCitations": []
     },
@@ -205,8 +211,8 @@
         "astronomy.js"
       ],
       "factsExpected": 3,
-      "factsFound": 2,
-      "groundedness": 0.6666666666666666,
+      "factsFound": 3,
+      "groundedness": 1,
       "cited": true,
       "correctSource": true,
       "citations": [
@@ -252,7 +258,8 @@
       "subject": "nutrition",
       "retrievedFrom": [
         "nutrition.js",
-        "history.js"
+        "history.js",
+        "chemistry.js"
       ],
       "factsExpected": 3,
       "factsFound": 3,
@@ -261,7 +268,8 @@
       "correctSource": true,
       "citations": [
         "nutrition.js",
-        "history.js"
+        "history.js",
+        "chemistry.js"
       ],
       "invalidCitations": []
     },

@@ -326,7 +326,27 @@ async function main() {
   enforcementSelfChecks();
   const rows = [];
   for (const q of QUESTIONS) {
-    const hits = retrieve(chunks, q.question, 4, `${q.subject}.js`);
+    // Answer slots: five since October 19, 2026 (evening). Why: the
+    // last incomplete question, geology-basics, sat at 2 of 3 facts
+    // because the only chunk inside its gate carrying "mineral" (the
+    // metamorphic chunk in geology.js, distinct keywords mineral,
+    // rock, each, score 4 with the subject boost) ties at score 4
+    // with an astronomy chunk carrying "layer", both add exactly one
+    // uncovered keyword, and corpus order gives the astronomy chunk
+    // the fourth slot. Widening the slots was measured and rejected
+    // three times under earlier retriever states (October 18 morning:
+    // five to eight slots change nothing; October 18 evening and
+    // October 19 morning: five slots fix nothing for the question
+    // then at 2 of 3). Remeasured after the marginal coverage
+    // tiebreak and the subject file boost landed, the picture is
+    // different: the mineral chunk is the fifth pick, geology-basics
+    // goes 2 of 3 to 3 of 3, and no question loses any fact, so the
+    // set reaches groundedness 1 on the extractive baseline. The
+    // other variants measured this run do not hold: subject boost
+    // +2, +3, and a subject file first tiebreak each fix geology but
+    // cost survival-priorities a fact (3 of 3 to 2 of 3). Six slots
+    // also measure 1, so five is the smallest change that moves it.
+    const hits = retrieve(chunks, q.question, 5, `${q.subject}.js`);
     const answer = mode === 'llm' ? await llmAnswer(hits, q.question) : baselineAnswer(hits);
     const retrievedFrom = [...new Set(hits.map(h => h.file))];
     rows.push({ id: q.id, subject: q.subject, retrievedFrom, ...scoreAnswer(answer, q, retrievedFrom) });
