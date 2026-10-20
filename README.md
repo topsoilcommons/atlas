@@ -4,7 +4,7 @@
 
 What runs today: Atlas helps you learn. You open it in a browser, choose one of 100 subjects, and read short lessons with pictures and exercises you can try. You get facts that show their sources. The first page is a proof screen. It shows one claim from the atlas, where that claim came from, who stands behind it, how it was checked, what it links to, and its seal. The same claim is shown in full on a phone, in short on a watch, read aloud by voice, and in large type on a public screen.
 
-The AI tutor that used to headline this page was dropped on 2026-10-15, by direction. Its eval harness and results stay in this repo as an archived experiment; see The proof, below. The eval record stands in tools/tutor-eval/results/trend.md; its latest run (October 17, 2026) measures groundedness 0.922, citation rate 1, and correct source rate 1 on a 17 question set.
+The AI tutor that used to headline this page was dropped on 2026-10-15, by direction. Its eval harness and results stay in this repo as an archived experiment; see The proof, below. The eval record stands in tools/tutor-eval/results/trend.md; its latest run (October 20, 2026) measures groundedness 1, citation rate 1, and correct source rate 1 on a 22 question set.
 
 ## The need
 
@@ -71,7 +71,7 @@ The tutor eval described in this section is an archived experiment. The tutor wa
 
 This is a working product, not a mockup. The app builds cleanly (`npm run build` compiles the full JSX source to a single bundle, 473 KB in the current tree), it passes a build smoke test and a scoped lint, and the content library ships in the repo: 93 content modules, a manifest of 100 subjects, and Supabase seed data covering 279 topics and 4,706 curated resources.
 
-The tutor is measured, not just described. The eval harness in `tools/tutor-eval/` grades answers produced over the atlas content for groundedness (do the facts the atlas states appear in the answer) and citation presence, and it runs in CI as a regression gate with per axis thresholds and a committed baseline. Current verified baseline results, from a run on 2026-10-17: groundedness 0.922, citation rate 1.0, correct source rate 1 across 17 questions drawn from the atlas itself, with every expected fact self checked against its source file before scoring. The full per question table is committed at `tools/tutor-eval/results/baseline-report.md`.
+The tutor is measured, not just described. The eval harness in `tools/tutor-eval/` grades answers produced over the atlas content for groundedness (do the facts the atlas states appear in the answer) and citation presence, and it runs in CI as a regression gate with per axis thresholds and a committed baseline. Current verified baseline results, from a run on 2026-10-20: groundedness 1, citation rate 1.0, correct source rate 1 across 22 questions drawn from the atlas itself, with every expected fact self checked against its source file before scoring. The full per question table is committed at `tools/tutor-eval/results/baseline-report.md`.
 The score trend over time is committed at `tools/tutor-eval/results/trend.md`. The same harness runs against a live model in LLM mode (`npm run eval:tutor:llm`); that mode needs an API key and has not been run yet, so no LLM numbers are claimed anywhere in this repo.
 
 Stated plainly, here is what is not finished:

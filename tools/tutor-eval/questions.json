@@ -167,5 +167,55 @@
       "de motu cordis",
       "blood circulates"
     ]
+  },
+  {
+    "id": "coffee-species",
+    "question": "What are the two commercially important coffee species, and how much more caffeine does Robusta have than Arabica?",
+    "subject": "coffee",
+    "facts": [
+      "arabica",
+      "robusta",
+      "twice the caffeine"
+    ]
+  },
+  {
+    "id": "photography-exposure-triangle",
+    "question": "What is the exposure triangle, what is aperture measured in, and what does ISO do to the sensor signal?",
+    "subject": "photography",
+    "facts": [
+      "exposure triangle",
+      "f-stops",
+      "amplification"
+    ]
+  },
+  {
+    "id": "chemistry-mendeleev-table",
+    "question": "Who created the periodic table in 1869, and what did he leave in it for elements that had not been discovered yet?",
+    "subject": "chemistry",
+    "facts": [
+      "dmitri mendeleev",
+      "periodic table",
+      "empty squares"
+    ]
+  },
+  {
+    "id": "music-guido-staff",
+    "question": "Which monk devised a system of horizontal lines for pitches around 1000 CE, and what could his choir singers do with that system?",
+    "subject": "music",
+    "facts": [
+      "guido of arezzo",
+      "horizontal lines",
+      "sight-read"
+    ]
+  },
+  {
+    "id": "baking-gluten",
+    "question": "Which two proteins in wheat cross-link to form gluten, and what gas does the gluten network trap?",
+    "subject": "baking",
+    "facts": [
+      "glutenin",
+      "gliadin",
+      "carbon dioxide"
+    ]
   }
 ]

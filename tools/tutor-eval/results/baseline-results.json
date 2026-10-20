@@ -1,7 +1,7 @@
 {
   "mode": "baseline",
-  "date": "2026-10-19T22:20:52.070Z",
-  "questions": 17,
+  "date": "2026-10-20T13:17:21.325Z",
+  "questions": 22,
   "thresholds": {
     "groundedness": 0.75,
     "citationRate": 1,
@@ -305,6 +305,94 @@
       "correctSource": true,
       "citations": [
         "medicine.js",
+        "biology.js"
+      ],
+      "invalidCitations": []
+    },
+    {
+      "id": "coffee-species",
+      "subject": "coffee",
+      "retrievedFrom": [
+        "coffee.js",
+        "geography.js",
+        "anthropology.js"
+      ],
+      "factsExpected": 3,
+      "factsFound": 3,
+      "groundedness": 1,
+      "cited": true,
+      "correctSource": true,
+      "citations": [
+        "coffee.js",
+        "geography.js",
+        "anthropology.js"
+      ],
+      "invalidCitations": []
+    },
+    {
+      "id": "photography-exposure-triangle",
+      "subject": "photography",
+      "retrievedFrom": [
+        "photography.js"
+      ],
+      "factsExpected": 3,
+      "factsFound": 3,
+      "groundedness": 1,
+      "cited": true,
+      "correctSource": true,
+      "citations": [
+        "photography.js"
+      ],
+      "invalidCitations": []
+    },
+    {
+      "id": "chemistry-mendeleev-table",
+      "subject": "chemistry",
+      "retrievedFrom": [
+        "chemistry.js"
+      ],
+      "factsExpected": 3,
+      "factsFound": 3,
+      "groundedness": 1,
+      "cited": true,
+      "correctSource": true,
+      "citations": [
+        "chemistry.js"
+      ],
+      "invalidCitations": []
+    },
+    {
+      "id": "music-guido-staff",
+      "subject": "music",
+      "retrievedFrom": [
+        "music.js",
+        "literature.js"
+      ],
+      "factsExpected": 3,
+      "factsFound": 3,
+      "groundedness": 1,
+      "cited": true,
+      "correctSource": true,
+      "citations": [
+        "music.js",
+        "literature.js"
+      ],
+      "invalidCitations": []
+    },
+    {
+      "id": "baking-gluten",
+      "subject": "baking",
+      "retrievedFrom": [
+        "baking.js",
+        "biology.js"
+      ],
+      "factsExpected": 3,
+      "factsFound": 3,
+      "groundedness": 1,
+      "cited": true,
+      "correctSource": true,
+      "citations": [
+        "baking.js",
         "biology.js"
       ],
       "invalidCitations": []

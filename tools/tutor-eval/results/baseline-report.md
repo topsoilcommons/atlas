@@ -1,6 +1,6 @@
 # Tutor eval results (baseline)
 
-Run: 2026-10-19T22:20:52.070Z. Questions: 17. Mode: baseline.
+Run: 2026-10-20T13:17:21.325Z. Questions: 22. Mode: baseline.
 
 - Groundedness (expected atlas facts present in the answer): **1** (gate: 0.75)
 - Citation rate (answers naming at least one retrieved source and no unretrieved source; enforcement in scoreAnswer): **1** (gate: 1)
@@ -25,5 +25,10 @@ Run: 2026-10-19T22:20:52.070Z. Questions: 17. Mode: baseline.
 | nutrition-prout | nutrition | 3/3 | yes | yes | nutrition.js, history.js, chemistry.js |
 | law-contracts | law | 3/3 | yes | yes | law.js, history.js |
 | medicine-harvey | medicine | 3/3 | yes | yes | medicine.js, biology.js |
+| coffee-species | coffee | 3/3 | yes | yes | coffee.js, geography.js, anthropology.js |
+| photography-exposure-triangle | photography | 3/3 | yes | yes | photography.js |
+| chemistry-mendeleev-table | chemistry | 3/3 | yes | yes | chemistry.js |
+| music-guido-staff | music | 3/3 | yes | yes | music.js, literature.js |
+| baking-gluten | baking | 3/3 | yes | yes | baking.js, biology.js |
 
 Baseline mode is an extractive answerer over retrieved atlas passages. It is the floor: any real tutor configuration should beat it, and a drop here means retrieval or content changed for the worse.
