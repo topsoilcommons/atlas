@@ -1,14 +1,14 @@
 {
   "mode": "baseline",
-  "date": "2026-10-20T13:17:21.325Z",
-  "questions": 22,
+  "date": "2026-10-20T22:20:51.883Z",
+  "questions": 25,
   "thresholds": {
     "groundedness": 0.75,
     "citationRate": 1,
     "correctSourceRate": 0.75
   },
   "summary": {
-    "groundedness": 1,
+    "groundedness": 0.987,
     "citationRate": 1,
     "correctSourceRate": 1
   },
@@ -394,6 +394,56 @@
       "citations": [
         "baking.js",
         "biology.js"
+      ],
+      "invalidCitations": []
+    },
+    {
+      "id": "chess-sicilian-endgame-positions",
+      "subject": "chess",
+      "retrievedFrom": [
+        "gamedev.js",
+        "chess.js"
+      ],
+      "factsExpected": 3,
+      "factsFound": 3,
+      "groundedness": 1,
+      "cited": true,
+      "correctSource": true,
+      "citations": [
+        "gamedev.js",
+        "chess.js"
+      ],
+      "invalidCitations": []
+    },
+    {
+      "id": "coffee-processing-roast-brew-span",
+      "subject": "coffee",
+      "retrievedFrom": [
+        "coffee.js"
+      ],
+      "factsExpected": 3,
+      "factsFound": 3,
+      "groundedness": 1,
+      "cited": true,
+      "correctSource": true,
+      "citations": [
+        "coffee.js"
+      ],
+      "invalidCitations": []
+    },
+    {
+      "id": "photography-exposure-composition-light-span",
+      "subject": "photography",
+      "retrievedFrom": [
+        "photography.js"
+      ],
+      "factsExpected": 3,
+      "factsFound": 2,
+      "groundedness": 0.6666666666666666,
+      "cited": true,
+      "correctSource": true,
+      "citations": [
+        "photography.js"
       ],
       "invalidCitations": []
     }

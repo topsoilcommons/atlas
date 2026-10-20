@@ -217,5 +217,35 @@
       "gliadin",
       "carbon dioxide"
     ]
+  },
+  {
+    "id": "chess-sicilian-endgame-positions",
+    "question": "Which opening is described as the single most-played opening in top-level chess, what does the rule of the square tell a player in king-and-pawn endgames, and what is the Lucena position an example of in rook endings?",
+    "subject": "chess",
+    "facts": [
+      "single most-played opening",
+      "rule of the square",
+      "lucena position"
+    ]
+  },
+  {
+    "id": "coffee-processing-roast-brew-span",
+    "question": "In coffee, what is honey processing, what audible milestone is first crack in roasting, and what extraction yield range is the measured sweet spot in brewing?",
+    "subject": "coffee",
+    "facts": [
+      "honey processing",
+      "first crack",
+      "18 and 22 percent"
+    ]
+  },
+  {
+    "id": "photography-exposure-composition-light-span",
+    "question": "In photography, what are blown highlights on a histogram, how is negative space used in composition, and what is Rembrandt lighting in a portrait?",
+    "subject": "photography",
+    "facts": [
+      "blown highlights",
+      "negative space",
+      "rembrandt lighting"
+    ]
   }
 ]
