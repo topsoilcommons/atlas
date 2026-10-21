@@ -1,7 +1,7 @@
 {
   "mode": "baseline",
-  "date": "2026-10-21T13:16:51.354Z",
-  "questions": 25,
+  "date": "2026-10-21T22:30:28.503Z",
+  "questions": 28,
   "thresholds": {
     "groundedness": 0.75,
     "citationRate": 1,
@@ -444,6 +444,54 @@
       "correctSource": true,
       "citations": [
         "photography.js"
+      ],
+      "invalidCitations": []
+    },
+    {
+      "id": "biology-cajal-linnaeus-pollination-span",
+      "subject": "biology",
+      "retrievedFrom": [
+        "biology.js"
+      ],
+      "factsExpected": 3,
+      "factsFound": 3,
+      "groundedness": 1,
+      "cited": true,
+      "correctSource": true,
+      "citations": [
+        "biology.js"
+      ],
+      "invalidCitations": []
+    },
+    {
+      "id": "geography-greenhouse-grid-chokepoints-span",
+      "subject": "geography",
+      "retrievedFrom": [
+        "geography.js"
+      ],
+      "factsExpected": 3,
+      "factsFound": 3,
+      "groundedness": 1,
+      "cited": true,
+      "correctSource": true,
+      "citations": [
+        "geography.js"
+      ],
+      "invalidCitations": []
+    },
+    {
+      "id": "history-uruk-florence-tennessee-span",
+      "subject": "history",
+      "retrievedFrom": [
+        "history.js"
+      ],
+      "factsExpected": 3,
+      "factsFound": 3,
+      "groundedness": 1,
+      "cited": true,
+      "correctSource": true,
+      "citations": [
+        "history.js"
       ],
       "invalidCitations": []
     }

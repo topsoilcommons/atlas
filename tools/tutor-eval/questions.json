@@ -247,5 +247,35 @@
       "negative space",
       "rembrandt lighting"
     ]
+  },
+  {
+    "id": "biology-cajal-linnaeus-pollination-span",
+    "question": "In biology, what did Santiago Ramon y Cajal use silver nitrate staining to argue about the brain, what does a two part Latin name claim in classification, and why is pollination described as a byproduct?",
+    "subject": "biology",
+    "facts": [
+      "silver nitrate",
+      "two part Latin name",
+      "byproduct"
+    ]
+  },
+  {
+    "id": "geography-greenhouse-grid-chokepoints-span",
+    "question": "In geography, which law is used to calculate Earth's effective temperature in the greenhouse effect worked example, what 1811 plan laid out Manhattan's rectangular grid of avenues and numbered streets, and what should a geopolitical analysis map among terrain, chokepoints, and navigable routes?",
+    "subject": "geography",
+    "facts": [
+      "Stefan-Boltzmann law",
+      "155 numbered streets",
+      "chokepoints"
+    ]
+  },
+  {
+    "id": "history-uruk-florence-tennessee-span",
+    "question": "In history, what writing system started as pictograms and ended as wedges pressed with a cut reed into wet clay in Sumerian Mesopotamia, who won the 1401 Florence competition for the baptistery bronze doors, and which state's ratification made the women's suffrage amendment law for the whole country?",
+    "subject": "history",
+    "facts": [
+      "cuneiform",
+      "Ghiberti",
+      "Tennessee"
+    ]
   }
 ]
