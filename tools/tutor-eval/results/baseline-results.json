@@ -1,6 +1,6 @@
 {
   "mode": "baseline",
-  "date": "2026-10-20T22:20:51.883Z",
+  "date": "2026-10-21T13:16:51.354Z",
   "questions": 25,
   "thresholds": {
     "groundedness": 0.75,
@@ -8,7 +8,7 @@
     "correctSourceRate": 0.75
   },
   "summary": {
-    "groundedness": 0.987,
+    "groundedness": 1,
     "citationRate": 1,
     "correctSourceRate": 1
   },
@@ -438,8 +438,8 @@
         "photography.js"
       ],
       "factsExpected": 3,
-      "factsFound": 2,
-      "groundedness": 0.6666666666666666,
+      "factsFound": 3,
+      "groundedness": 1,
       "cited": true,
       "correctSource": true,
       "citations": [

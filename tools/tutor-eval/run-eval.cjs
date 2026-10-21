@@ -222,7 +222,40 @@ function retrieve(chunks, question, k = 4, subjectFile = null) {
 
 function baselineAnswer(hits) {
   if (!hits.length) return 'The atlas does not cover that yet.';
-  const body = hits.map(h => h.text).join(' ').slice(0, 4000);
+  // Answer length cut: 5,000 characters, widened from 4,000 on
+  // October 21, 2026. Why: the photography-exposure-composition-light-span
+  // question sat at 2 of 3 facts because the histogram chunk carrying
+  // "blown highlights" is retrieved fifth, starts at offset 3978 in the
+  // joined answer, and the phrase itself sits at offset 4332, past the
+  // old 4,000 cut; the failure was this cut, not retrieval, citation, or
+  // source. Measured in throwaway scripts before the edit: the bare
+  // threshold is 4,348 (the phrase ends at 4332 + 16), and cuts of
+  // 4,348, 4,400, and 4,500 all measure groundedness 1 with no question
+  // losing any fact, but each still truncates retrieved text (the
+  // question's joined answer is 4,561 characters) and the bare threshold
+  // is tuned to this one phrase's offset. 5,000 is the smallest round
+  // cut above the longest joined answer in the set (4,561; only three
+  // of 25 answers exceed 4,000 at all: physics-frameworks 4,373,
+  // medicine-harvey 4,460, and this question 4,561), so on this corpus
+  // no retrieved chunk is truncated, while the cut still bounds answer
+  // length; 6,000 and removing the cut also measure 1 and were rejected
+  // as larger than needed. The cost is length only: average joined body
+  // rises from 2,711 to 2,767 characters and the maximum from 4,000 to
+  // 4,561. The other measured families were rejected because they cost
+  // a fact elsewhere or change far more: per-chunk caps of 700, 800,
+  // and 900 fix photography but drop medicine-harvey 3 of 3 to 2 of 3
+  // (cap 500 also drops gardening-soil to 2 of 3 and the chess span
+  // question to 2 of 3, and medicine-harvey to 1 of 3; cap 1,000 leaves
+  // photography at 2 of 3); shortest-first and reverse chunk order and
+  // fair-share per-chunk truncation each fix photography but drop
+  // medicine-harvey to 2 of 3; longest-first changes nothing;
+  // sentence-relevance-only truncation drops groundedness to 0.92
+  // (finance-budget 3 of 3 to 0 of 3, gardening-soil, bbq-brisket, and
+  // law-contracts each losing a fact); and a global sentence ranking
+  // into the 4,000 budget also measures 1 with no fact lost, but it
+  // reorders sentences out of their passages and rewrites the answerer
+  // to do it, a much larger change than widening the cut.
+  const body = hits.map(h => h.text).join(' ').slice(0, 5000);
   const sources = [...new Set(hits.map(h => h.file))];
   return body + '\n\nSources: ' + sources.map(f => `[source: ${f}]`).join(' ');
 }
